@@ -1,14 +1,20 @@
 import React, { Fragment, useState } from "react";
-import FetchSample from "./components/fetchSample";
+import Nav from "./components/UI/Nav";
+import classes from "./App.module.css";
 
-//Open AI
-//name : RealRyuSeungMin
-//ID : org-CbWeMC4FpgNDlBRj0jBPRMAL
-//key : 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
 function App() {
+  const [selectedMenu, setSelectedMenu] = useState();
+
+  const selectedMenuHandler = (component) => {
+    setSelectedMenu(component);
+  };
+
   return (
     <Fragment>
-      <FetchSample />
+      <div className={classes.entire}>
+        <Nav onSelect={selectedMenuHandler} />
+        <div className={classes.content}>{selectedMenu}</div>
+      </div>
     </Fragment>
   );
 }
