@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState } from "react";
+import FetchSample from "./components/fetchSample";
 
+//Open AI
+//name : RealRyuSeungMin
+//ID : org-CbWeMC4FpgNDlBRj0jBPRMAL
+//key : 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
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <FetchSample />
+    </Fragment>
   );
 }
 
