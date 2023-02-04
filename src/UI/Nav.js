@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import classes from "./Nav.module.css";
 import navItems from "./NavItems";
-import ryulabIcon from './Img/ryulabIcon.png';
+import yomdungChatIcon from './Img/yomdungChatIcon.png';
 
 const Nav = (props) => {
   const [navs, setNavs] = useState(navItems);
@@ -39,7 +39,7 @@ const Nav = (props) => {
   return (
     <>
       <div className={classes.nav}>
-        <div className={classes.mainIcon}><img src={ryulabIcon} /></div>
+        <div className={classes.mainIcon}><img src={yomdungChatIcon} /></div>
         {navs.map((nav) => (
           <div
             className={`${classes.navItem} ${
