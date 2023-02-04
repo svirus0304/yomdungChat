@@ -18,7 +18,7 @@ const DUMMY_MESSAGES = [
 ];
 
 const OpenAiSample = () => {
-  const [messages, setMessages] = useState(DUMMY_MESSAGES);
+  const [messages, setMessages] = useState(DUMMY_MESSAGES); 
 
   const inputRef = useRef();
   const scrollRef = useRef();
@@ -82,16 +82,18 @@ const OpenAiSample = () => {
       name: "GPT3",
       text: <DotLoadingIcon />,
     });
+    console.log(configuration);
     const res = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: text, //Say this is a test
-      temperature:0.9,
+      temperature:0,
       max_tokens:2048,
       top_p:1,
       frequency_penalty:0,
       presence_penalty:0.6
     });
-    console.log(res);
+
+    console.log("res : ",res);
     addMessage({
       type: "UPDATE",
       id: id,
