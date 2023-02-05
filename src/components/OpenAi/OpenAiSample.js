@@ -5,6 +5,7 @@ import classes from "./OpenAiSample.module.css";
 
 import SendIcon from "../UI/Svg/SendIcon";
 import DotLoadingIcon from "../UI/Svg/DotLoadingIcon";
+import userDebug from "../../common/userDebug";
 
 //Open AI
 const configuration = new Configuration({
@@ -36,10 +37,11 @@ const OpenAiSample = () => {
 
   //엔터 치면 입력
   const keyDownHandler = (e) => {
-    // console.log(e.keyCode);
-    if ((e.keyCode == 13 && (e.metaKey || e.ctrlKey))){
-      return ;
-    }else if (e.keyCode === 13) {
+    userDebug({ keyCode: e.keyCode });
+
+    if (e.keyCode == 13 && (e.metaKey || e.ctrlKey)) {
+      return;
+    } else if (e.keyCode === 13) {
       sendHandler();
     }
   };
@@ -85,7 +87,7 @@ const OpenAiSample = () => {
       name: "GPT3",
       text: <DotLoadingIcon />,
     });
-    // console.log(configuration);
+    userDebug({ configuration: configuration });
     const res = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: text, //Say this is a test
@@ -96,7 +98,7 @@ const OpenAiSample = () => {
       presence_penalty: 0.6,
     });
 
-    // console.log("res : ", res);
+    userDebug({ res: res });
     addMessage({
       type: "UPDATE",
       id: id,
