@@ -3,11 +3,12 @@ import { Configuration, OpenAIApi } from "openai";
 import Messages from "./Messages";
 import classes from "./OpenAiSample.module.css";
 
-import SendIcon from '../UI/Svg/SendIcon';
-import DotLoadingIcon from '../UI/Svg/DotLoadingIcon';
+import SendIcon from "../UI/Svg/SendIcon";
+import DotLoadingIcon from "../UI/Svg/DotLoadingIcon";
 
 //Open AI
 const configuration = new Configuration({
+  organization: "org-CbWeMC4FpgNDlBRj0jBPRMAL",
   apiKey: process.env.REACT_APP_OPEN_AI_KEY,
 });
 const openai = new OpenAIApi(configuration);
@@ -18,7 +19,7 @@ const DUMMY_MESSAGES = [
 ];
 
 const OpenAiSample = () => {
-  const [messages, setMessages] = useState(DUMMY_MESSAGES); 
+  const [messages, setMessages] = useState(DUMMY_MESSAGES);
 
   const inputRef = useRef();
   const scrollRef = useRef();
@@ -35,8 +36,10 @@ const OpenAiSample = () => {
 
   //엔터 치면 입력
   const keyDownHandler = (e) => {
-    console.log(e);
-    if (e.keyCode === 13) {
+    // console.log(e.keyCode);
+    if ((e.keyCode == 13 && (e.metaKey || e.ctrlKey))){
+      return ;
+    }else if (e.keyCode === 13) {
       sendHandler();
     }
   };
@@ -82,18 +85,18 @@ const OpenAiSample = () => {
       name: "GPT3",
       text: <DotLoadingIcon />,
     });
-    console.log(configuration);
+    // console.log(configuration);
     const res = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: text, //Say this is a test
-      temperature:0,
-      max_tokens:2048,
-      top_p:1,
-      frequency_penalty:0,
-      presence_penalty:0.6
+      temperature: 0,
+      max_tokens: 2048,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0.6,
     });
 
-    console.log("res : ",res);
+    // console.log("res : ", res);
     addMessage({
       type: "UPDATE",
       id: id,
