@@ -1,16 +1,18 @@
 import React, { Fragment, useState } from "react";
 import classes from "./App.module.css";
+import Admob from "./components/Ads/Admob";
 import OpenAiSample from "./components/OpenAi/OpenAiSample";
+import Container from "./components/UI/Container";
 
 function App() {
 
   return (
     <Fragment>
-      <div className={classes.entire}>  
+      <Container className={classes.entire}>  
         <div className={classes.content}>
           <OpenAiSample />
         </div>
-      </div>
+      </Container>
     </Fragment>
   );
 }

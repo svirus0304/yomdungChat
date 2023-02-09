@@ -1,5 +1,3 @@
-import React from "react";
-
 const userDebug = (props) => {
   if (process.env.NODE_ENV === "development") {
     console.log(props);

@@ -84,7 +84,7 @@ const OpenAiSample = () => {
     addMessage({
       type: "ADD",
       id: ++id,
-      name: "GPT3",
+      name: "AI",
       text: <DotLoadingIcon />,
     });
     userDebug({ configuration: configuration });
@@ -102,14 +102,13 @@ const OpenAiSample = () => {
     addMessage({
       type: "UPDATE",
       id: id,
-      name: "GPT3",
+      name: "AI",
       text: res.data.choices[0].text.trim(),
     });
   };
 
   return (
     <Fragment>
-      <h2>Chat GPT 3</h2>
       <div className={classes.room}>
         <div ref={scrollRef} className={classes.messages}>
           <Messages messages={messages} />

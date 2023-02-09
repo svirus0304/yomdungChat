@@ -1,5 +1,6 @@
 .entire {
   height: 70vh;
+  /* height:var(--conHeight); */
 }
 .content {
   height: 100%;
