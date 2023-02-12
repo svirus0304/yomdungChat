@@ -1,8 +1,10 @@
 .room {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .messages {
-  height: 88%;
+  height: 100%;
   background-color: rgb(185, 214, 172);
   display: block;
   padding: 1rem 1rem 1rem 1rem;
@@ -45,7 +47,7 @@
 .textInput {
   display: flex;
   padding: 0.2rem 0.2rem 0.2rem 0.2rem;
-  margin: 0.5rem;
+  margin: 0.5rem 1rem 1rem 0.5rem;
   border-radius: 10px;
   box-shadow: 0px 0px 5px gray;
 }
