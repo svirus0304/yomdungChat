@@ -1,6 +1,7 @@
 .entire {
-  height: 70vh;
-  /* height:var(--conHeight); */
+  height: 100vh;
+  /* height: 85vh; */
+  /* height:var(--conHeight,90vh); */
 }
 .content {
   height: 100%;

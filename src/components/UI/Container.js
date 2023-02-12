@@ -2,22 +2,20 @@ import userDebug from "../../common/userDebug";
 import { useEffect, useState } from "react";
 
 const Container = (props) => {
-  let [conHeight, setConHeight] = useState("");
+  let [conHeight, setConHeight] = useState("90vh");
   const newClasses = props.className;
 
-  const resizeHandler = (props) => {
-    setConHeight(window.innerHeight+"vh");
-    userDebug({ conHeight });
-  };
+  // const resizeHandler = (props) => {
+  //   setConHeight(window.innerHeight);
+  //   userDebug({ conHeight });
+  // };
 
-  window.addEventListener("resize", resizeHandler);
-
-  //   useEffect(() => {
-  //     window.addEventListener("resize", resizeHandler);
-  //     return () => {
-  //       window.removeEventListener("resize", resizeHandler);
-  //     };
-  //   }, []);
+  // useEffect(() => {
+  //   window.addEventListener("resize", resizeHandler);
+  //   return () => {
+  //     window.removeEventListener("resize", resizeHandler);
+  //   };
+  // },[]);
 
   return (
     <div className={newClasses} style={{ "--conHeight": conHeight }}>

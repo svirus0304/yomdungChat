@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import classes from "./App.module.css";
-import Admob from "./components/Ads/Admob";
 import OpenAiSample from "./components/OpenAi/OpenAiSample";
 import Container from "./components/UI/Container";
 
